@@ -1,8 +1,8 @@
 
 Goals
-- build in eclipse
----- get pi up and running, connect with putty
----- install eclipse and get the project in repo
+x- build in eclipse
+x---- get pi up and running, connect with putty
+x---- install eclipse and get the project in repo
 - download to pi and blink an led
 ---- build a test project and download to pi
 ---- figure out how java libraries work, get pi library to interface with gpio pints (j4pi?)
