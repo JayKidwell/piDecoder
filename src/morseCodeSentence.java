@@ -22,20 +22,20 @@ public class morseCodeSentence {
 		input = new Scanner(System.in);
 		prompt();
 		while(!ogSentence.equals("done")){
-			translateSentence();
+			translateSentence(pin);
 			output();
-	        pin.high();        
-	        System.out.println("light ON");
+	        //pin.high();        
+	        //System.out.println("light ON");
 	        // wait 1seconds
-	        Thread.sleep(1000);
+	        //Thread.sleep(1000);
 	        // turn off GPIO 1
-	        pin.low();
-	        System.out.println("light is: OFF");
+	        //pin.low();
+	        //System.out.println("light is: OFF");
 	        // wait 1 second
-	        Thread.sleep(1000);
+	        //Thread.sleep(1000);
 	        // turn on GPIO 1 for 1 second and then off
-	        System.out.println("light is: ON for 1 second");
-	        pin.pulse(1000, true);
+	        //System.out.println("light is: ON for 1 second");
+	        //pin.pulse(1000, true);
 			
 			prompt();
 		}
@@ -50,23 +50,36 @@ public class morseCodeSentence {
 		
 	}
 
-	public static void translateSentence(){
+	public static void translateSentence(GpioPinDigitalOutput pin) throws InterruptedException{
 		morseSentence = "";
 
 		for (int x = 0; x < ogSentence.length(); x++) {
 			switch (ogSentence.substring(x, x + 1).toLowerCase()) {
 			case ("a"):
 				letter = ".-";
-			break;
+				dot(pin);
+				dash(pin);
+				break;
 			case ("b"):
 				letter = "-...";
-			break;
+				dash(pin);
+				dot(pin);
+				dot(pin);
+				dot(pin);
+				break;
 			case ("c"):
 				letter = "-.-.";
-			break;
+				dash(pin);
+				dot(pin);
+				dash(pin);
+				dot(pin);
+				break;
 			case ("d"):
 				letter = "-..";
-			break;
+				dash(pin);
+				dot(pin);
+				dot(pin);
+				break;
 			case ("e"):
 				letter = ".";
 			break;
@@ -157,6 +170,20 @@ public class morseCodeSentence {
 	public static void output(){
 		System.out.println("Original sentence:" + ogSentence);
 		System.out.println("Morse code sentence: " + morseSentence);
+	}
+	private static void dot(GpioPinDigitalOutput pin) throws InterruptedException{
+        System.out.println("dot");
+        pin.high();        
+        Thread.sleep(300);
+        pin.low();
+        Thread.sleep(300);
+	}
+	private static void dash(GpioPinDigitalOutput pin) throws InterruptedException{
+        System.out.println("dash");
+        pin.high();        
+        Thread.sleep(600);
+        pin.low();
+        Thread.sleep(600);
 	}
 
 }
