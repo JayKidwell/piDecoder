@@ -1,0 +1,68 @@
+
+
+from
+https://cloud.google.com/speech/docs/getting-started
+
+1. Create a JSON request file with the following text, and save it as a sync-request.json plain text file:
+
+{
+  'config': {
+      'encoding':'FLAC',
+      'sampleRate': 16000,
+      'languageCode': 'en-US'
+  },
+  'audio': {
+      'uri':'gs://cloud-samples-tests/speech/brooklyn.flac'
+  }
+}
+
+the gs: protocol is actually this sound file:
+https://storage.googleapis.com/cloud-samples-tests/speech/brooklyn.flac
+
+which says "how old is the brooklyn bridge"
+
+
+
+2 Authenticate to your service account, passing the location of your service account key file:
+
+C:\Program Files (x86)\Google\Cloud SDK>gcloud auth activate-service-account --key-file=C:\Users\jay\Downloads\piDecoder-f903aadf5183.json
+
+Activated service account credentials for: [speechtotext@pidecoder.iam.gserviceaccount.com]
+
+this json file was a download created when I created credentials for the speech api on the pidecoder project on the google cloud account
+
+
+
+3 Obtain an authorizaton token using your service account:
+
+C:\Program Files (x86)\Google\Cloud SDK>gcloud auth print-access-token
+
+ya29.El8MBJZ9wrsIzEfmko1MUSz_1Jq01awOlqdIDIawOnZqKXC5J7Oc5A6HV_7KFt5YNqfdjP--qwmP3nCZ_ZYSzfEOLra-RKT4RJgH3EHzAG_isfkAZhFuSWnZu9Cqcci72w
+
+
+4 Use curl to make a speech:syncrecognize request, passing it the access token you printed, and the filename of the JSON request you set up in step 1:
+
+(Note that to pass a filename to curl you use the -d option (for "data") and precede the filename with an @ sign. 
+This file should be in the same directory in which you execute the curl command.)
+
+copied this to a bat file and ran it...
+
+curl -s -k -H "Content-Type: application/json" -H "Authorization: Bearer ya29.El8MBJZ9wrsIzEfmko1MUSz_1Jq01awOlqdIDIawOnZqKXC5J7Oc5A6HV_7KFt5YNqfdjP--qwmP3nCZ_ZYSzfEOLra-RKT4RJgH3EHzAG_isfkAZhFuSWnZu9Cqcci72w"     https://speech.googleapis.com/v1beta1/speech:syncrecognize     -d @C:\Users\jay\OneDrive\Documents\piDecoder\GoogleApiTest\sync-request.json
+
+
+and it returned this...!!
+
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "transcript": "how old is the Brooklyn Bridge",
+          "confidence": 0.98267895
+        }
+      ]
+    }
+  ]
+}
+
+

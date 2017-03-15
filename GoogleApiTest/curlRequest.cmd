@@ -1,0 +1,1 @@
+curl -s -k -H "Content-Type: application/json" -H "Authorization: Bearer ya29.El8MBJZ9wrsIzEfmko1MUSz_1Jq01awOlqdIDIawOnZqKXC5J7Oc5A6HV_7KFt5YNqfdjP--qwmP3nCZ_ZYSzfEOLra-RKT4RJgH3EHzAG_isfkAZhFuSWnZu9Cqcci72w"     https://speech.googleapis.com/v1beta1/speech:syncrecognize     -d @C:\Users\jay\OneDrive\Documents\piDecoder\GoogleApiTest\sync-request.json
