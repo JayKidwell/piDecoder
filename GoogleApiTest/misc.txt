@@ -1,20 +1,7 @@
 
 
-Create a Google Cloud Account --
-https://console.cloud.google.com
-email: jay@contensive.com
-pw: 68fastback!
-Click Console -- shows the project (piDecoder)
-Click on Service Accounts -- shows there is a service account 
--- "speechToText"
--- service account id "speechtotext@pidecoder.iam.gserviceaccount.com"
--- Key ID "f903aadf5183efdbfe385f5458f3ebe3cf2a505f"
-
-
-
-
-
-from https://cloud.google.com/speech/docs/getting-started
+from
+https://cloud.google.com/speech/docs/getting-started
 
 1. Create a JSON request file with the following text, and save it as a sync-request.json plain text file:
 
