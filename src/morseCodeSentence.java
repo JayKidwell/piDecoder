@@ -80,6 +80,7 @@ public class morseCodeSentence {
 				dot(pin);
 				dot(pin);
 				break;
+			//e is the next letter
 			case ("e"):
 				letter = ".";
 			break;
@@ -185,5 +186,8 @@ public class morseCodeSentence {
         pin.low();
         Thread.sleep(600);
 	}
+	
+	
+	
 
 }
