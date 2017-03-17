@@ -83,72 +83,143 @@ public class morseCodeSentence {
 			//e is the next letter
 			case ("e"):
 				letter = ".";
+				dot(pin);
 			break;
 			case ("f"):
 				letter = "..-.";
+				dot(pin);
+				dot(pin);
+				dash(pin);
+				dot(pin);
 			break;
 			case ("g"):
 				letter = "--.";
+				dash(pin);
+				dash(pin);
+				dot(pin);
 			break;
 			case ("h"):
 				letter = "....";
+				dot(pin);
+				dot(pin);
+				dot(pin);
+				dot(pin);
 			break;
 			case ("i"):
 				letter = "..";
+				dot(pin);
+				dot(pin);
 			break;
 			case ("j"):
 				letter = ".---";
+				dot(pin);
+				dash(pin);
+				dash(pin);
+				dash(pin);
 			break;
 			case ("k"):
 				letter = "-.-.";
+				dash(pin);
+				dot(pin);
+				dash(pin);
+				dot(pin);
 			break;
 			case ("l"):
 				letter = ".-..";
+				dot(pin);
+				dash(pin);
+				dot(pin);
+				dot(pin);
 			break;
 			case ("m"):
 				letter = "--";
+				dash(pin);
+				dash(pin);
 			break;
 			case ("n"):
 				letter = "-.";
+				dash(pin);
+				dot(pin);
 			break;
 			case ("o"):
 				letter = "---";
+				dash(pin);
+				dash(pin);
+				dash(pin);
 			break;
 			case ("p"):
 				letter = ".--.";
+				dot(pin);
+				dash(pin);
+				dash(pin);
+				dot(pin);
 			break;
 			case ("q"):
 				letter = "--.-";
+				dash(pin);
+				dash(pin);
+				dot(pin);
+				dash(pin);
 			break;
 			case ("r"):
 				letter = ".-.";
+				dot(pin);
+				dash(pin);
+				dot(pin);
 			break;
 			case ("s"):
 				letter = "...";
+				dot(pin);
+				dot(pin);
+				dot(pin);
 			break;
 			case ("t"):
 				letter = "-";
+				dash(pin);
 			break;
 			case ("u"):
 				letter = "..-";
+				dot(pin);
+				dot(pin);
+				dash(pin);
 			break;
 			case ("v"):
 				letter = "...-";
+				dot(pin);
+				dot(pin);
+				dot(pin);
+				dash(pin);
 			break;
 			case ("w"):
 				letter = ".--";
+				dot(pin);
+				dash(pin);
+				dash(pin);
 			break;
 			case ("x"):
 				letter = "-..-";
+				dash(pin);
+				dot(pin);
+				dot(pin);
+				dash(pin);
 			break;
 			case ("y"):
 				letter = "-.--";
+				dash(pin);
+				dot(pin);
+				dash(pin);
+				dash(pin);
 			break;
 			case ("z"):
 				letter = "--..";
+				dash(pin);
+				dash(pin);
+				dot(pin);
+				dot(pin);
 			break;
 			case(" "):
 			letter = " ";
+				space(pin);
 			break;
 			case ("done"):
 				letter = "bye!";
@@ -185,6 +256,12 @@ public class morseCodeSentence {
         Thread.sleep(600);
         pin.low();
         Thread.sleep(600);
+	}
+	
+	private static void space(GpioPinDigitalOutput pin) throws InterruptedException{
+		System.out.println("space");
+		pin.low();
+		Thread.sleep(300);
 	}
 	
 	
