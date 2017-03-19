@@ -23,8 +23,7 @@ public class morseCodeSentence {
         GpioPinDigitalOutput ledPin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "PinLED", PinState.LOW);
         GpioPinDigitalInput buttonPin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_08);
 		input = new Scanner(System.in);
-		// wait for button to be high (starting state)
-		
+		// wait for button to be high (starting state)		
 		while(buttonPin.isLow()){}
 		while(!ogSentence.equals("done")){
 			// wait for button push
@@ -46,7 +45,7 @@ public class morseCodeSentence {
 	//  phase 3 - open a microphone, record a file and translate it to a string
 	//
 	public static String prompt() {
-		return "All work and no play makes Johnny a dull boy";
+		return "Lydia";
 		//System.out.print("Enter a sentence to translate: ");
 		//return input.nextLine();		
 	}
@@ -247,24 +246,24 @@ public class morseCodeSentence {
 		System.out.println("Morse code sentence: " + morseSentence);
 	}
 	private static void dot(GpioPinDigitalOutput pin) throws InterruptedException{
-        System.out.println("dot");
+        System.out.print("dot ");
         pin.high();        
-        Thread.sleep(100);
+        Thread.sleep(500);
         pin.low();
-        Thread.sleep(100);
+        Thread.sleep(500);
 	}
 	private static void dash(GpioPinDigitalOutput pin) throws InterruptedException{
-        System.out.println("dash");
+        System.out.print("dash ");
         pin.high();        
-        Thread.sleep(200);
+        Thread.sleep(1000);
         pin.low();
-        Thread.sleep(200);
+        Thread.sleep(1000);
 	}
 	
 	private static void space(GpioPinDigitalOutput pin) throws InterruptedException{
-		System.out.println("space");
+		System.out.println("space  ");
 		pin.low();
-		Thread.sleep(100);
+		Thread.sleep(500);
 	}
 	
 	
