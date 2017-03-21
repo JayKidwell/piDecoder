@@ -18,5 +18,7 @@
 	<classpathentry kind="lib" path="lib/pi4j-service-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/pi4j-service-sources.jar"/>
 	<classpathentry kind="lib" path="lib/pi4j-service.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Don/Downloads/javaFlacEncoder-0.3.1-all.tar/javaFlacEncoder-0.3.1-all/javaFlacEncoder-0.3.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/SpeechToMorse"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
