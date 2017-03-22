@@ -87,7 +87,7 @@ public class morseCodeSentence{
 		    // call google api
 		    //
 		    Translate test = new Translate();
-		    String resultSentence =  test.googleTranslate("/home/pi/test.flac");
+		    String resultSentence =  test.googleApiTranslate("/home/pi/test.flac");
 			
 //			ChannelConfig streamConfig = 
 //			
